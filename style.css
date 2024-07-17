@@ -1,0 +1,56 @@
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 1px solid black;
+    transform-style: preserve-3d;
+    animation: flip 8s infinite linear;
+    margin-top: 130px;
+   
+
+}
+
+.square {
+    box-shadow: 10px 0px 10px;
+    padding-bottom: 30%;
+    justify-content: center;
+    transform-style: preserve-3d;
+
+    display: flex;
+
+}
+
+
+.square img {
+    max-height: 30px;
+    width: 30px;
+   
+
+}
+.square img:hover{
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.square.black {
+    background-color: rgb(4, 118, 114);
+
+}
+
+.square.black:hover,
+.square.white:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.square.white {
+    background-color: white;
+}
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(500px) rotateY(360deg);
+    }
+}
